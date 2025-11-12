@@ -1,0 +1,366 @@
+#include <iostream>
+#include <string>
+#include <limits> 
+#include <iomanip> 
+
+using namespace std;
+
+
+struct Product {
+    string productModel;
+    int stockCount;
+    double price; 
+    double cost;  
+};
+void Sale () {
+    Product prod;
+    int count;
+    int dduct = prod.price * count;
+};
+
+void Restock () {
+    Product prodt;
+    int count1;
+    int add = prodt.stockCount * count1;
+    double liability = prodt.price * count1;
+};
+
+            Product gpu[5] = {
+        {"Gtx 1650",2,8950},
+        {"Gtx 1050TI",4,3500},
+        {"Rtx 4060",1,20329},
+        {"Gtx 1660 Super",3,12530},
+        {"Rx 560",2,6850}
+    };
+    
+                Product cpu[4] = {
+        {"AMD Ryzen™ 3 3200G Processor",2,3400},
+        {"Intel® Core™ i3-14100 Processor",4,7400},
+        {"AMD Ryzen™ 5 5600GT",1,7800},
+        {"Intel® Core™ i7-14700",2,20700},
+    };
+    
+                Product psu[3] = {
+        {"MSI MAG A650BN 650W 80 Plus Bronze",5,2865},
+        {"Msi Ai1300p 80 Plus Platinum",2,15950},
+        {"Corsair RMe Series RM1000e0",1,8150},
+        
+    };
+    
+                Product ram[4] = {
+        {"ADATA 16GB DDR4",6,3000},
+        {"AGI Gear 16GB DDR4",4,2500},
+        {"G.SKILL Trident Z5 Neo RGB 32GB DDR5",2,11850},
+        {"KINGSTON 16GB DDR5",5,3200},
+    };
+    
+                Product input[6] = {
+        {"ATTACK SHARK K86 Wireless Mechanical Keyboard",3,3462.35},
+        {"Logitech Pro X Superlight Wireless Gaming Mouse",4,5295},
+        {"HyperX Cloud III Wireless Headset",2,5995},
+        {"Attack Shark X11 Wireless Mouse",5,1348,1},
+        {"Logitech Brio 100 Full HD 1080p Webcam",3,1790},
+        {"ACER 27 Nitro VG271U M3BMIIPX IPS Monitor",2,11650}
+    };
+
+int main() {
+
+    
+    
+    Product prod;
+    int choice;
+    int count;
+    int profitPerUnit;
+    double totalProfit;
+    int enterednum;
+
+    while (true) {
+        cout << "\n==================================" << endl;
+        cout << "    Inventory Management System" << endl;
+        cout << "==================================" << endl;
+        cout << "1. View Inventory (Stock and Profit)" << endl;
+        cout << "2. Process Sale" << endl;
+        cout << "3. Restock Inventory" << endl;
+        cout << "4. Exit Program" << endl;
+        cout << "----------------------------------" << endl;
+        
+        cout << endl;
+        
+        cout << "Please enter a number from 1 to 4: ";
+        if (!(cin >> choice)) {
+            cin.clear();
+            cin.ignore(10000, '\n');
+            cout << "\nInvalid input. Please enter a number from 1 to 4." << endl;
+            continue; 
+        }
+        
+        
+
+
+        switch (choice) {
+            case 1: {
+                cout << "\n--- View Inventory ---" << endl;
+                cout<<"\n";
+                
+            cout <<"Please Choose A Catergory: "<<endl;   
+            cout<<"\n";
+            cout <<"1. Graphics Cards"<<endl; 
+            cout<<"\n";
+            cout <<"2. Processors"<<endl;
+            cout<<"\n";
+            cout <<"3. Power Supply"<<endl;
+            cout<<"\n";
+            cout <<"4. Memory Modules"<<endl;
+            cout<<"\n";
+            cout <<"5. Input Devices"<<endl;
+            cout<<"\n";
+            cout <<"Select A Number 1-5: ";
+            cin >> enterednum;
+                
+                if (enterednum == 1){
+                    cout<<"\n";
+                    cout << "----------------------------------" << endl;
+                    cout<<"\n";
+                    cout << "Inventory: Graphics Card" <<endl;
+                    for(int i = 0; i < 5; i++){
+                        cout<<"\n";
+                cout << left << setw(20) << "Product Model:" << gpu[i].productModel << endl;
+                cout << left << setw(20) << "Current Stock:" << gpu[i].stockCount << endl;
+                cout << left << setw(20) << "Selling Price:" << "$" << gpu[i].price << endl;
+                    }
+                    
+                                     cout<<"\n";
+                 cout << "----------------------------------" << endl;
+                 
+                }
+                
+                if (enterednum == 2)
+                {
+                                    cout<<"\n";
+                    cout << "----------------------------------" << endl;
+                    cout<<"\n";
+                    cout << "Inventory: Processors" <<endl;
+                    
+                    for(int i = 0; i < 4; i++){
+                        
+                        cout<<"\n";
+                cout << left << setw(20) << "Product Model:" << cpu[i].productModel << endl;
+                cout << left << setw(20) << "Current Stock:" << cpu[i].stockCount << endl;
+                cout << left << setw(20) << "Selling Price:" << "$" << cpu[i].price << endl;
+                    
+                    }
+                    
+                                     cout<<"\n";
+                 cout << "----------------------------------" << endl;
+                    
+                }
+                
+                
+                if (enterednum == 3)
+                {
+                                    cout<<"\n";
+                    cout << "----------------------------------" << endl;
+                    cout<<"\n";
+                    cout << "Inventory: Power Supplies" <<endl;
+                    
+                    for(int i = 0; i < 3; i++){
+                        
+                        cout<<"\n";
+                cout << left << setw(20) << "Product Model:" << psu[i].productModel << endl;
+                cout << left << setw(20) << "Current Stock:" << psu[i].stockCount << endl;
+                cout << left << setw(20) << "Selling Price:" << "$" << psu[i].price << endl;
+                
+                }
+                
+                                 cout<<"\n";
+                 cout << "----------------------------------" << endl;
+                
+                }
+                
+                if (enterednum == 4)
+                {
+                                    cout<<"\n";
+                    cout << "----------------------------------" << endl;
+                    cout<<"\n";
+                    cout << "Inventory: Memory Modules" <<endl;
+                    
+                    for(int i = 0; i < 4; i++)
+                    {
+
+                        cout<<"\n";
+                cout << left << setw(20) << "Product Model:" << ram[i].productModel << endl;
+                cout << left << setw(20) << "Current Stock:" << ram[i].stockCount << endl;
+                cout << left << setw(20) << "Selling Price:" << "$" << ram[i].price << endl;
+                
+                }
+                
+                                 cout<<"\n";
+                 cout << "----------------------------------" << endl;
+                
+                }
+                
+                if (enterednum == 5)
+                {
+                                    cout<<"\n";
+                    cout << "----------------------------------" << endl;
+                    cout<<"\n";
+                    cout << "Inventory: Input Devices" <<endl;
+                    
+                    for(int i = 0; i < 6; i++)
+                    {
+
+                        cout<<"\n";
+                cout << left << setw(20) << "Product Model:" << input[i].productModel << endl;
+                cout << left << setw(20) << "Current Stock:" << input[i].stockCount << endl;
+                cout << left << setw(20) << "Selling Price:" << "$" << input[i].price << endl;
+                
+                }
+                 cout<<"\n";
+                 cout << "----------------------------------" << endl;
+
+            }
+
+}
+            case 2: {
+                int count;
+                double profitPerUnit = prod.price - prod.cost;
+
+                cout << "\n--- Process Sale ---" << endl;
+                cout << "Available Stock: " << prod.stockCount << endl;
+                    break;
+                }
+
+                if (count <= 0) {
+                    cout << "\n[ERROR] Sale quantity must be a positive number." << endl;
+                } else if (count > prod.stockCount) {
+                    cout << "\n[ERROR] Cannot sell " << count << " units. Only " << prod.stockCount << " in stock." << endl;
+                } else {
+                    double totalValue = prod.price * count;
+                    double currentProfit = profitPerUnit * count;
+
+                    prod.stockCount -= count;
+                    totalProfit += currentProfit; 
+
+                    cout << "\n*** Sale Details *" << endl;
+                    cout << left << setw(20) << "Units Sold:" << count << endl;
+                    cout << left << setw(20) << "Total Value:" << "$" << totalValue << endl;
+                    cout << left << setw(20) << "Profit Earned:" << "$" << currentProfit << endl;
+                    cout << left << setw(20) << "Stock Remaining:" << prod.stockCount << endl;
+                    cout << "**********" << endl;
+                }
+                break;
+            
+
+            case 3: {
+    cout << "\n--- Restock Inventory ---\n";
+
+    int category;
+    cout << "\nSelect a category to restock:\n";
+    cout << "1. Graphics Cards\n2. Processors\n3. Power Supply\n4. Memory Modules\n5. Input Devices\n";
+    cout << "Enter category number: ";
+    cin >> category;
+
+    Product* products = nullptr;
+    int size = 0;
+
+    switch (category) {
+        case 1: products = gpu; size = 5; break;
+        case 2: products = cpu; size = 4; break;
+        case 3: products = psu; size = 3; break;
+        case 4: products = ram; size = 4; break;
+        case 5: products = input; size = 6; break;
+        default:
+            cout << "\nInvalid category.\n";
+            break;
+    }
+
+    if (products == nullptr) break;
+
+    cout << "\nAvailable Products:\n";
+    for (int i = 0; i < size; i++) {
+        cout << i + 1 << ". " << products[i].productModel
+             << " | Stock: " << products[i].stockCount
+             << " | Cost Price: $" << fixed << setprecision(2) << products[i].cost
+             << endl;
+    }
+
+    int productChoice;
+    cout << "\nSelect a product number: ";
+    cin >> productChoice;
+
+    if (productChoice < 1 || productChoice > size) {
+        cout << "\nInvalid product selection.\n";
+        break;
+    }
+
+    Product& selectedProduct = products[productChoice - 1];
+
+    const int supplierLimit = 50;
+    int quantity;
+
+    while (true) {
+        cout << "\nEnter quantity to restock (max " << supplierLimit << "): ";
+        cin >> quantity;
+
+        if (!cin) {
+            cin.clear();
+            cin.ignore(10000, '\n');
+            cout << "\nInvalid input. Please enter a number.\n";
+            continue;
+        }
+
+        if (quantity <= 0) {
+            cout << "\n[ERROR] Quantity must be positive.\n";
+            continue;
+        }
+
+        if (quantity > supplierLimit) {
+            cout << "\n[ERROR] Supplier does not have enough stock.\n";
+            continue;
+        }
+
+        double totalCost = quantity * selectedProduct.cost;
+
+        cout << "\n--- Review Restock Order ---\n";
+        cout << left << setw(20) << "Product:"       << selectedProduct.productModel << "\n";
+        cout << left << setw(20) << "Units:"         << quantity << "\n";
+        cout << left << setw(20) << "Cost per Unit:" << fixed << setprecision(2) << selectedProduct.cost << "\n";
+        cout << left << setw(20) << "Total Cost:"    << fixed << setprecision(2) << totalCost << "\n\n";
+
+        cout << "Options:\n1. Confirm Restock\n2. Edit Quantity\n3. Cancel Order\nEnter choice: ";
+        int option;
+        cin >> option;
+
+        if (!cin) {
+            cin.clear();
+            cin.ignore(10000, '\n');
+            cout << "\nInvalid option.\n";
+            break;
+        }
+
+        if (option == 1) {
+            selectedProduct.stockCount += quantity;
+            cout << "\n*** Restock Completed ***\n";
+            cout << "New stock: " << selectedProduct.stockCount << "\n";
+            break;
+        } else if (option == 2) {
+            continue;
+        } else if (option == 3) {
+            cout << "\nOrder cancelled.\n";
+            break;
+        } else {
+            cout << "\nInvalid option. Please try again.\n";
+        }
+    }
+    break;
+}
+
+
+
+            case 4: {
+                cout << "\nExiting Inventory Management System. Final Total Profit: $" << totalProfit << endl;
+                return 0; 
+            }
+        }
+    }
+}
